@@ -1,8 +1,8 @@
-package com.starwars.model;
+package com.cca.starwars.model;
 
 import org.springframework.data.rest.core.config.Projection;
 
-@Projection(name = "planetOnlyNameAndPopulation", types = Planet.class)
+@Projection(name="planetOnlyNameAndPopulation", types=Planet.class)
 public interface PlanetOnlyNameAndPopulation {
     String getName();
     Long getPopulation();

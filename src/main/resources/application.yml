@@ -1,9 +1,26 @@
 spring:
   jpa:
-    hibernate:
-      ddl-auto: create
+    generate-ddl: true
+
+  # Strategies of endpoints auto exposure, see slides of day three
+  data:
+    rest:
+      detection-strategy: all
+
+
+my:
+  sample:
+    # This property will be ignored if MY_SAMPLE_PROPERTY env variable is found
+    property: samplePorperty
 
 server:
+  port: 3000
   error:
     whitelabel:
       enabled: false
+
+# Enables endpoint an repository health monitor
+management:
+  security:
+    enabled: false
+

@@ -1,25 +1,18 @@
-package com.starwars.model;
+package com.cca.starwars.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-import org.springframework.hateoas.ResourceSupport;
 
-import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Entity
-@EntityListeners({AuditingEntityListener.class})
+@Entity(name = "characters")
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class People extends ResourceSupport{
+@EntityListeners({AuditingEntityListener.class})
+public class People {
     @Id
     @GeneratedValue
     private Long peopleId;
@@ -31,10 +24,13 @@ public class People extends ResourceSupport{
 
     private String name;
     private String birthYear;
+    private String eyeColor;
     private String gender;
+    private String hairColor;
     private String height;
     private String mass;
-    private String eyeColor;
-    private String hairColor;
     private String skinColor;
+    private String homeworld;
+    private String url;
+
 }
